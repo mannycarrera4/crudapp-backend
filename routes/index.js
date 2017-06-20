@@ -62,7 +62,8 @@ router.post('/climbing-route', function(req, res, next) {
   console.log('post request', req.body.name)
   res.set('Access-Control-Allow-Origin', '*');
   res.set('Access-Control-Allow-Headers', 'Content-Type');
-  connection.query('INSERT INTO climbing_route (name) VALUES ("'+ req.body.name + '")', function(err, result) {
+  var insertValues = `${req.body.name}, ${req.body.location}, ${req.body.difficulty}`
+  connection.query('INSERT INTO climbing_route (name, location, difficulty) VALUES ("' + insertValues + '")', function(err, result) {
     res.json(result)
   })
 });
