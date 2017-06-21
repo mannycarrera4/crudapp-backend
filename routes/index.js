@@ -19,15 +19,6 @@ connection.connect()
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
-  // connection.connect(function(err) {
-  //   console.log('You are now connected...')
-  //   connection.query('SELECT * FROM climbing', function(err, result) {
-  //     res.json(result)
-  //   })
-  //
-  // })
-  // console.warn(res)
-  // res.json({"test":"hey hey"});
 });
 
 router.get('/climbing-route', function(req, res, next) {
